@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geohazards TEP</title>
+
+<link rel="shortcut icon" href="img/favicon.jpg" type="image/jpeg">
+
+<link href="scripts/libs/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="scripts/libs/bootstrap/css/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
+<link href="css/styles.css" type="text/css" rel="stylesheet" />
+<link href="css/app.css" type="text/css" rel="stylesheet" />
+
+<script src="scripts/libs/jquery/jquery-1.10.2.js"></script>
+<script src="scripts/libs/jquery-ui/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="scripts/libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="scripts/app.js"></script>
+
+
+</head>
+<body>
+<div id="wrap">
+
+<header>
+<div class="container">
+
+	<div class="row hidden-phone subHeader">
+		<div class="logos pull-right">
+		  <a href="http://www.ceos.org/" target="_blank"><div class="ceos-min"></div></a>
+		  <a href="https://www.earthobservations.org/about_geo.shtml" target="_blank"><div class="geo-min"></div></a>
+		</div>
+	</div>
+
+	<div class="navbar navbar">
+		<div class="navbar-inner visible-desktop">
+			<a class="brand" href="/#!"></a>
+			<div class="" id="menu">
+				<ul class="nav">
+					<li class="active"><a href="#!">Home</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="navbar-inner visible-phone visible-tablet">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">Geohazards TEP</a>
+			
+			<div class="nav-collapse collapse" id="menuPhone">
+				<ul class="nav">
+					<li class="active"><a href="#!">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+</div>
+</header>
+	
+<div id="mainContainer">
+
+	<div id="myCarousel" class="carousel slide">
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+			<li data-target="#myCarousel" data-slide-to="4"></li>
+		</ol>
+		<!-- Carousel items -->
+		<div class="carousel-inner">
+			<div style="background-image:url('img/carousel/0.jpg');" class="item active"></div>
+			<div style="background-image:url('img/carousel/1.jpg');" class="item"></div>
+			<div style="background-image:url('img/carousel/2.jpg');" class="item"></div>
+			<div style="background-image:url('img/carousel/3.jpg');" class="item"></div>
+			<div style="background-image:url('img/carousel/4.jpg');" class="item"></div>
+		</div>
+		
+		<h1>Setting up the VM...</h1>
+	</div>
+	
+
+	<div class="container">
+	
+		<div id="log">
+			<div id="logLoader" class="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+			
+			<span class="logTitle">install.log</span>
+			<pre id="logContent" class='well'>
+			</pre>
+			
+			<a id="logReloadBtn" class="btn btn-small" href="#">Reload log</a>
+		</div>
+	
+		<div id="progress">
+			<div class="progress progress-striped active">
+				<div class="bar" style="width: 0%;">
+					<span class="lead progressPercentage">0%</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- /main -->
+</div><!-- /wrap -->
+<footer class="footer">
+    designed by <a href="http://www.terradue.com" target="_blank">Terradue</a>
+	<p class="pull-right"><strong><a href="http://terradue.github.io/doc-tep-geohazards" target="_blank">DOCUMENTATION</a></strong></p>
+</footer>
+
+</body>
+</html>

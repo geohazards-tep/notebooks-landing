@@ -1,0 +1,63 @@
+
+/* LOG */
+#log {
+	display: none;
+	margin-bottom: 40px;
+}
+#logLoader > div { background-color: #004b6a; }
+#logReloadBtn { margin-top: 0px; }
+#logContent {
+	background: #444;
+	color: #1BDF00;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	white-space: pre-wrap;
+}
+.logTitle {
+	font-size: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px 5px 0px 0px;
+	border-bottom: none;
+	padding: 0px 5px;
+	display: block;
+}
+
+
+
+/* CAROUSEL */
+#myCarousel h1 {
+    color: white;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px black;
+    font-weight: bold;
+}
+
+
+/* PROGRESS */
+#progress {
+	text-align: center;
+	margin-top: 50px;
+}
+#progress .progress{
+	margin-top: 20px;
+    height: 40px;
+    width: 90%;
+    margin: 20px auto;
+}
+#progress .progressPercentage { font-size: 25px; line-height: 40px; }
+#progress .progressLoader { margin: 0px auto; }
+
+
+
+/* SPINNER */
+.spinner { margin: 100px auto 0; width: 70px; text-align: center; }
+.spinner > div { width: 18px; height: 18px; background-color: white; border-radius: 100%; display: inline-block; -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both; animation: sk-bouncedelay 1.4s infinite ease-in-out both; }
+.spinner .bounce1 { -webkit-animation-delay: -0.32s; animation-delay: -0.32s; }
+.spinner .bounce2 { -webkit-animation-delay: -0.16s; animation-delay: -0.16s; }
+@-webkit-keyframes sk-bouncedelay { 0%, 80%, 100% { -webkit-transform: scale(0) } 40% { -webkit-transform: scale(1.0) } }
+@keyframes sk-bouncedelay { 0%, 80%, 100% { -webkit-transform: scale(0); transform: scale(0); } 40% { -webkit-transform: scale(1.0); transform: scale(1.0); } }
+
