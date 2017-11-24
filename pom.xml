@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.terradue</groupId>
+    <artifactId>t2-parent</artifactId>
+    <version>16</version>
+  </parent>
+  <groupId>com.terradue</groupId>
+  <artifactId>gep-notebooks-landing</artifactId>
+  <packaging>rpm</packaging>
+  <name>gep-notebooks-landing</name>
+  <description>Geohazards Thematic Exploitation Platform landing pages for notebooks</description>
+  <version>0.2</version>
+  <profiles>
+    <!-- Development environment -->
+    <profile>
+      <id>dev</id>
+      <properties>
+        <site>dev</site>
+        <redmine.projectID>puppet</redmine.projectID>
+      </properties>
+    </profile>
+  </profiles>
+  <pluginRepositories>
+    <pluginRepository>
+      <snapshots/>
+      <id>repository.terradue.com</id>
+      <name>repository.terradue.com-releases</name>
+      <url>http://repository.terradue.com/artifactory/libs-release-public</url>
+    </pluginRepository>
+  </pluginRepositories>
+  <build>
+    <resources>
+      <resource>
+        <directory>${basedir}/src/main/resources/html</directory>
+        <excludes/>
+        <targetPath>${project.build.directory}/html</targetPath>
+      </resource>
+      <!-- Resources not filtered are copied as is-->
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>generate-rpm</id>
+            <goals>
+              <goal>rpm</goal>
+            </goals>
+            <phase>prepare-package</phase>
+          </execution>
+        </executions>
+        <configuration>
+          <copyright>${project.inceptionYear}, Terradue, GPL</copyright>
+          <distribution>Terradue ${project.inceptionYear}</distribution>
+          <group>infra</group>
+          <packager>Terradue</packager>
+          <name>${project.artifactId}</name>
+          <defaultDirmode>775</defaultDirmode>
+          <defaultFilemode>664</defaultFilemode>
+          <defaultUsername>apache</defaultUsername>
+          <defaultGroupname>apache</defaultGroupname>
+          <autoRequires>true</autoRequires>
+          <description>Geohazards Thematic Exploitation Platform landing pages for notebooks</description>
+          <mappings>
+            <mapping>
+              <directory>/var/www/html</directory>
+              <sources>
+                <source>
+                  <location>${project.build.directory}/html</location>
+                </source>
+              </sources>
+            </mapping>
+          </mappings>
+          <provides>
+            <provide>${project.artifactId}</provide>
+          </provides>
+          <requires/>
+          <needarch>noarch</needarch>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.terradue</groupId>
+        <artifactId>rpmdeploy-maven-plugin</artifactId>
+        <version>1.2</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
