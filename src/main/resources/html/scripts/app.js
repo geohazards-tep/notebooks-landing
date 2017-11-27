@@ -42,4 +42,9 @@ $(document).ready(function(){
 	// init carousel
 	$('#myCarousel').carousel();
 	
+	// reload the page after 1 minute
+	setTimeout(function(){
+		document.location.reload();
+	}, 60 * 1000);
+	
 });
