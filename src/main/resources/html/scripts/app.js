@@ -1,18 +1,5 @@
 $(document).ready(function(){
 	
-	setInterval(function(){
-		checkProgress();
-	},1500);
-	
-	function checkProgress(){
-		$.getJSON('status.json?rnd='+Math.random(), function(json){
-			if (json.percentage){
-				$('#progress .bar').css('width', ''+json.percentage+'%');
-				$('#progress span.lead').text(''+json.percentage+'%');
-			}
-		});
-	};
-	
 	// log load function
 	function loadLog(){
 		
